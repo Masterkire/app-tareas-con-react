@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/app-tareas/static/css/main.c8feb93d.css",
+    "main.js": "/app-tareas/static/js/main.081ae39c.js",
+    "index.html": "/app-tareas/index.html",
+    "static/media/delete.svg": "/app-tareas/static/media/delete.43abd16f54731d4913dce221c9e37631.svg",
+    "static/media/check.svg": "/app-tareas/static/media/check.6294639ee94bec2d5ce0d30f38cbe8fa.svg",
+    "main.c8feb93d.css.map": "/app-tareas/static/css/main.c8feb93d.css.map",
+    "main.081ae39c.js.map": "/app-tareas/static/js/main.081ae39c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c8feb93d.css",
+    "static/js/main.081ae39c.js"
+  ]
+}
