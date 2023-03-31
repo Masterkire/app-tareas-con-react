@@ -18,7 +18,7 @@ function TodoIcon({type, color = 'gray', onClick}) {
             className={`Icon-container Icon-container--${type}`}
             onClick={onClick}
         >
-            -.-{iconTypes[type](color)}
+            {iconTypes[type](color)}
         </span>
     )
 }

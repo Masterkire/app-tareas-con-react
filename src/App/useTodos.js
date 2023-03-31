@@ -1,9 +1,7 @@
 import React from 'react';
 import { useLocalStorage } from './useLocalStorage';
 
-const TodoContext = React.createContext();
-
-function TodoProvider(props) {
+function useTodos() {
 
     const {
         item: todos,
@@ -45,10 +43,6 @@ function TodoProvider(props) {
         const newTodos = [...todos];
         newTodos[todoIndex].completed = true;
         saveTodos(newTodos);
-        /* todos[todoIndex] = {
-          text: todos[todoIndex].text,
-          completed: true,
-         }*/
       }
     
       const deleteTodo = (text) => {
@@ -57,39 +51,22 @@ function TodoProvider(props) {
         const newTodos = [...todos];
         newTodos.splice(todoIndex, 1);
         saveTodos(newTodos);
-        /* todos[todoIndex] = {
-          text: todos[todoIndex].text,
-          completed: true,
-         }*/
       }
-    
-      /* console.log('Render (antes del use effect)');
-    
-      React.useEffect(() => {
-        console.log('use effect');
-      }, [totalTodos]);
-    
-      console.log('Render (luego del use effect)'); */
 
-    return (
-
-        <TodoContext.Provider value={{
-            loading,
-            error,
-            totalTodos,
-            completedTodos,
-            searchValue,
-            setSearchValue,
-            searchedTodos,
-            addTodo,
-            completeTodo,
-            deleteTodo,
-            openModal,
-            setOpenModal,
-        }}>
-            {props.children}
-        </TodoContext.Provider>
-    );
+    return {
+      loading,
+      error,
+      totalTodos,
+      completedTodos,
+      searchValue,
+      setSearchValue,
+      searchedTodos,
+      addTodo,
+      completeTodo,
+      deleteTodo,
+      openModal,
+      setOpenModal,
+    };
 }
 
-export { TodoContext, TodoProvider };
+export { useTodos };
