@@ -11,6 +11,7 @@ import { EmptyTodos } from "../EmptyTodos";
 import { ErrorTodos } from "../ErrorTodos";
 import { CreateTodoButton } from "../CreateTodoButton";
 import { Modal } from "../Modal";
+import { ChangeAlert} from '../ChangeAlert';
 
 function App() {
   const {
@@ -26,6 +27,7 @@ function App() {
     searchValue,
     setSearchValue,
     addTodo,
+    sincronizeTodos,
   } = useTodos();
 
   return (
@@ -39,6 +41,7 @@ function App() {
         <TodoSearch
           searchValue={searchValue}
           setSearchValue={setSearchValue}
+          // loading={loading} //No se necesita parar este argumento ya que lo recibe de TodoHeader
         />
       </TodoHeader>
 
@@ -82,6 +85,10 @@ function App() {
       )}
 
       <CreateTodoButton setOpenModal={setOpenModal} />
+
+      <ChangeAlert
+        sincronize={sincronizeTodos}
+      />
     </React.Fragment>
   );
 }
